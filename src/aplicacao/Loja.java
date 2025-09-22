@@ -127,7 +127,7 @@ public class Loja implements AcoesLoja {
             for (ProdutoFisico produtoFisico : produtosFisico) {
                 if (produtoFisico.getEstoque() > 0) {
                     produtosDisponiveis.append(produtoFisico).append("\n");
-                    //usando toString() que contem todas as informações do produto
+                    //usando toString() nativo que contem todas as informações do produto
                 }
             }
 
@@ -154,10 +154,15 @@ public class Loja implements AcoesLoja {
             Produto escolhido = buscarProdutoPorId(idProduto); //se encontrar, a variavel escolhido guardará a referencia ao objeto Produto
 
             if (escolhido != null) {
-                pedido.adicionarProduto(escolhido); //adiciona o produto encontrado ao pedido
-                JOptionPane.showMessageDialog(null,
-                        "PRODUTO ADICIONADO AO PEDIDO:\n" + escolhido.exibirDetalhes());
-                escolhido.setEstoque(escolhido.getEstoque() - 1); //atualiza o estoque do produto escolhido
+                //verifica o estoque caso o cliente digite o código de um produto sem estoque
+                if (escolhido.getEstoque() < 1) {
+                    JOptionPane.showMessageDialog(null, "PRODUTO SEM ESTOQUE!");
+                }else{
+                    pedido.adicionarProduto(escolhido); //adiciona o produto encontrado ao pedido
+                    JOptionPane.showMessageDialog(null,
+                            "PRODUTO ADICIONADO AO PEDIDO:\n" + escolhido.exibirDetalhes());
+                    escolhido.setEstoque(escolhido.getEstoque() - 1); //atualiza o estoque do produto escolhido
+                }
             } else {
                 //avisa se o produto não foi encontrado
                 JOptionPane.showMessageDialog(null, "PRODUTO NÃO ENCONTRADO!");
@@ -195,6 +200,7 @@ public class Loja implements AcoesLoja {
                 relatorio.append(" - NENHUM PEDIDO REALIZADO.\n\n");
             } else {
                 //lista todos os pedidos do cliente e adiciona no relatorio
+                relatorio.append(c).append("\n");
                 for (Pedido p : c.getPedidos()) {
                     relatorio.append(" - PEDIDO: \n")
                             .append(p.listarProdutos())
