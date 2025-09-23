@@ -6,7 +6,7 @@ import modelo.ProdutoFisico;
 import modelo.ProdutoDigital;
 import modelo.Produto;
 import util.Pedido;
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
 //a classe Loja implementa a interface AcoesLoja
 public class Loja implements AcoesLoja {
