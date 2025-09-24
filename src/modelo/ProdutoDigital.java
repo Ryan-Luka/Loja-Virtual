@@ -36,6 +36,6 @@ public class ProdutoDigital extends Produto {
         return super.exibirDetalhes() +
                 ", TIPO: " + tipo() +
                 ", FORMATO: " + getFormato();
-        //chama o metodo exibirDetalhes da classe produto e acrescenta o tipo
+        //chama o metodo exibirDetalhes da classe produto e acrescenta o tipo e formato
     }
 }
