@@ -25,12 +25,17 @@ public class ProdutoFisico extends Produto{
     //representação do produto fisico
     @Override
     public String toString() {
-        return super.toString() + ", TIPO: " + tipo() + " , PESO: " + getPeso() + " kg"; //chama o toString da classe Produto e acrescenta o tipo e o peso
+        return super.toString() +
+                ", TIPO: " + tipo() +
+                " , PESO: " + getPeso() + " kg";
+        //chama o toString da classe Produto e acrescenta o tipo e o peso
     }
 
     @Override
     public String exibirDetalhes() {
-        return super.exibirDetalhes() + ", TIPO: " + tipo() + " , PESO: " + getPeso() + " kg"; //chama o metodo exibirDetalhes da classe produto e acrescenta o tipo e o peso
+        return super.exibirDetalhes() +
+                ", TIPO: " + tipo() +
+                " , PESO: " + getPeso() + " kg";
+        //chama o metodo exibirDetalhes da classe produto e acrescenta o tipo e o peso
     }
-
 }

@@ -1,4 +1,5 @@
 package aplicacao;
+
 import java.util.ArrayList;
 import interfaces.AcoesLoja;
 import modelo.Cliente;
@@ -200,7 +201,6 @@ public class Loja implements AcoesLoja {
                 relatorio.append(" - NENHUM PEDIDO REALIZADO.\n\n");
             } else {
                 //lista todos os pedidos do cliente e adiciona no relatorio
-                relatorio.append(c).append("\n");
                 for (Pedido p : c.getPedidos()) {
                     relatorio.append(" - PEDIDO: \n")
                             .append(p.listarProdutos())
@@ -328,13 +328,8 @@ public class Loja implements AcoesLoja {
             escolhido.setEstoque(escolhido.getEstoque() + quantidadeRepor);
             JOptionPane.showMessageDialog(null,
                     "ESTOQUE ATUALIZADO COM SUCESSO!\n" + escolhido.exibirDetalhes() + ", ESTOQUE: " + escolhido.getEstoque());
-
-
         }
     }
-
-
-
 }
 
 

@@ -25,13 +25,17 @@ public class ProdutoDigital extends Produto {
     //representação do produto digital
     @Override
     public String toString() {
-        return super.toString() + ", TIPO: " + tipo() + ", FORMATO: " + getFormato(); //chama o toString da classe Produto e acrescenta o tipo e formato
+        return super.toString() +
+                ", TIPO: " + tipo() +
+                ", FORMATO: " + getFormato();
+        //chama o toString da classe Produto e acrescenta o tipo e formato
     }
 
     @Override
     public String exibirDetalhes() {
-        return super.exibirDetalhes() + ", TIPO: " + tipo() + ", FORMATO: " + getFormato(); //chama o metodo exibirDetalhes da classe produto e acrescenta o tipo
+        return super.exibirDetalhes() +
+                ", TIPO: " + tipo() +
+                ", FORMATO: " + getFormato();
+        //chama o metodo exibirDetalhes da classe produto e acrescenta o tipo
     }
-
-
 }

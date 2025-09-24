@@ -50,6 +50,7 @@ public class Cliente {
                 ", E-MAIL: " + email;
     }
 
+    //exibe todas as informações do cliente + ID
     public String exibirDetalhesCliente() {
         return "ID: " + idCliente +
                 ", NOME: " + nome +

@@ -8,7 +8,7 @@ public abstract class Produto {
     private int estoque;
     private final int id;
 
-    //contador para gerar os ids
+    //contador para gerar os ID's
     public static int contador = 1;
 
     //construtor
@@ -49,6 +49,7 @@ public abstract class Produto {
                 ", ESTOQUE: " + estoque;
     }
 
+    //exibe os detalhes do produto sem mostrar a quantidade em estoque
     public String exibirDetalhes() {
         return "ID: " + id +
                 ", NOME: " + nome +

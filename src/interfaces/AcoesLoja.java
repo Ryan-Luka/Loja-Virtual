@@ -25,6 +25,5 @@ public interface AcoesLoja {
     void alterarStatusPedido();
     //verifica se existem produtos com estoque abaixo de um limite minimo
     void checarEstoqueBaixo(int  limiteMinimo);
-
 }
 
